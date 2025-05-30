@@ -1,0 +1,79 @@
+-- Create
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "InstructionsGui"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 400, 0, 200)
+frame.Position = UDim2.new(0.5, -200, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BackgroundTransparency = 0.4
+frame.BorderSizePixel = 0
+frame.AnchorPoint = Vector2.new(0.5, 0.5)
+frame.Parent = screenGui
+
+-- corner
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = frame
+
+-- title
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, -40, 0, 30)
+title.Position = UDim2.new(0, 10, 0, 10)
+title.BackgroundTransparency = 1
+title.Text = "• Tutorial"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 22
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Parent = frame
+
+-- 1
+local line1 = Instance.new("TextLabel")
+line1.Size = UDim2.new(1, -40, 0, 25)
+line1.Position = UDim2.new(0, 10, 0, 50)
+line1.BackgroundTransparency = 1
+line1.Text = "• Make sure to have a player that holds out a pet for you"
+line1.TextColor3 = Color3.fromRGB(220, 220, 220)
+line1.Font = Enum.Font.Gotham
+line1.TextSize = 18
+line1.TextWrapped = true
+line1.TextXAlignment = Enum.TextXAlignment.Left
+line1.Parent = frame
+
+-- 2
+local line2 = Instance.new("TextLabel")
+line2.Size = UDim2.new(1, -40, 0, 25)
+line2.Position = UDim2.new(0, 10, 0, 80)
+line2.BackgroundTransparency = 1
+line2.Text = "• Must be Valuable or If Possible Not Valuable"
+line2.TextColor3 = Color3.fromRGB(220, 220, 220)
+line2.Font = Enum.Font.Gotham
+line2.TextSize = 18
+line2.TextWrapped = true
+line2.TextXAlignment = Enum.TextXAlignment.Left
+line2.Parent = frame
+
+-- close
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0, 30, 0, 30)
+closeButton.Position = UDim2.new(1, -35, 0, 5)
+closeButton.BackgroundColor3 = Color3.fromRGB(255, 70, 70)
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.Font = Enum.Font.GothamBold
+closeButton.TextSize = 18
+closeButton.Parent = frame
+
+-- close corner
+local closeCorner = Instance.new("UICorner")
+closeCorner.CornerRadius = UDim.new(0, 8)
+closeCorner.Parent = closeButton
+
+-- close function
+closeButton.MouseButton1Click:Connect(function()
+	screenGui:Destroy()
+end)
