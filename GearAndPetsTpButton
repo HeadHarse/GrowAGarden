@@ -1,0 +1,1 @@
+local U=game.Players.LocalPlayer:WaitForChild("PlayerGui")local B=U:WaitForChild("Teleport_UI")local e=B:WaitForChild("Frame");(e:WaitForChild("Gear")).Visible=true;(e:WaitForChild("Pets")).Visible=true
